@@ -24,3 +24,5 @@ view->client: "The browser now has the list of bookmarks"
 client-> user: "User can see bookmarkers on webpage"
 
 [Imgur](https://i.imgur.com/dp20OZG.jpg)
+
+<img src="https://i.imgur.com/dp20OZG.jpg"/>
