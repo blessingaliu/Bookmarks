@@ -28,35 +28,25 @@ client-> user: "User can see bookmarkers on webpage"
 <img src="https://i.imgur.com/dp20OZG.jpg"/>
 
 
-## Postgres setup: creating Database
+### To set up the database
 
-postgres=# CREATE DATABASE bookmark_manager;
-CREATE DATABASE
-postgres=# \l
-                                List of databases
-       Name       |  Owner   | Encoding | Collate | Ctype |   Access privileges   
-------------------+----------+----------+---------+-------+-----------------------
- blessingaliu     | blessing | UTF8     | C       | C     | 
- bookmark_manager | blessing | UTF8     | C       | C     | 
- postgres         | blessing | UTF8     | C       | C     | 
- template0        | blessing | UTF8     | C       | C     | =c/blessing          +
-                  |          |          |         |       | blessing=CTc/blessing
- template1        | blessing | UTF8     | C       | C     | =c/blessing          +
-                  |          |          |         |       | blessing=CTc/blessing
-(5 rows)
+Connect to `psql` and create the `bookmark_manager` database:
+
+```
+CREATE DATABASE bookmark_manager;
+```
+
+To set up the appropriate tables, connect to the database in `psql` and run the SQL scripts in the `db/migrations` folder in the given order.
 
 
-## Creating Table 
+### To run the Bookmark Manager app:
 
-bookmark_manager=# CREATE TABLE bookmarks (
-        id serial PRIMARY KEY,
-        url VARCHAR ( 60 )    
-);       
-CREATE TABLE
-bookmark_manager=# \dt
-           List of relations
- Schema |   Name    | Type  |  Owner   
---------+-----------+-------+----------
- public | bookmarks | table | blessing
-(1 row)
+```
+rackup -p 3000
+```
+
+To view bookmarks, navigate to `localhost:3000/bookmarks`.
+
+### To run tests:
+run db/migrations/01_create_bookmarks_table.sql
 
