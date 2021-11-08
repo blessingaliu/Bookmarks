@@ -26,3 +26,37 @@ client-> user: "User can see bookmarkers on webpage"
 [Imgur](https://i.imgur.com/dp20OZG.jpg)
 
 <img src="https://i.imgur.com/dp20OZG.jpg"/>
+
+
+## Postgres setup: creating Database
+
+postgres=# CREATE DATABASE bookmark_manager;
+CREATE DATABASE
+postgres=# \l
+                                List of databases
+       Name       |  Owner   | Encoding | Collate | Ctype |   Access privileges   
+------------------+----------+----------+---------+-------+-----------------------
+ blessingaliu     | blessing | UTF8     | C       | C     | 
+ bookmark_manager | blessing | UTF8     | C       | C     | 
+ postgres         | blessing | UTF8     | C       | C     | 
+ template0        | blessing | UTF8     | C       | C     | =c/blessing          +
+                  |          |          |         |       | blessing=CTc/blessing
+ template1        | blessing | UTF8     | C       | C     | =c/blessing          +
+                  |          |          |         |       | blessing=CTc/blessing
+(5 rows)
+
+
+## Creating Table 
+
+bookmark_manager=# CREATE TABLE bookmarks (
+        id serial PRIMARY KEY,
+        url VARCHAR ( 60 )    
+);       
+CREATE TABLE
+bookmark_manager=# \dt
+           List of relations
+ Schema |   Name    | Type  |  Owner   
+--------+-----------+-------+----------
+ public | bookmarks | table | blessing
+(1 row)
+
