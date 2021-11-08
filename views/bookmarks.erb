@@ -1,6 +1,6 @@
 <h1>Your Bookmarks:</h1>
-<ol>
-  <li>https://www.google.co.uk</li>
-  <li>https://www.bbc.co.uk</li>
-  <li>https://www.facebook.co.uk</li>
-</ol>
+<ul>
+  <% @bookmarks.each do |bookmark| %>
+    <li><%= bookmark %></li>
+  <% end %>
+</ul>
