@@ -2,13 +2,9 @@ require 'pg'
 
 class Bookmark
 
-  
- 
-  
   def self.all
-    conn = PG.connect( dbname: 'bookmark_manager' )
-    rs = conn.exec( "SELECT * FROM bookmarks" )
-    rs.map { |bookmark| bookmark['url'] }
+    connection = PG.connect( dbname: 'bookmark_manager' )
+    result = connection.exec( "SELECT * FROM bookmarks" )
+    result.map { |bookmark| bookmark['url'] }
   end
-
 end
