@@ -10,6 +10,9 @@ As a user
 So that I can have a larger option of bookmarks to choose from
 I'd like to be able to add to my list of bookmarks
 
+As a user
+So that I can clean up my bookmark options
+I'd like to be able to delete bookmarks from my list
 
 ## Domain model diagram 
 
