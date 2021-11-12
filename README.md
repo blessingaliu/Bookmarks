@@ -14,6 +14,10 @@ As a user
 So that I can clean up my bookmark options
 I'd like to be able to delete bookmarks from my list
 
+As a user 
+So that I have freedom to change my mind
+I'd like to be able to update my bookmark list
+
 ## Domain model diagram 
 
 alias user="User"
