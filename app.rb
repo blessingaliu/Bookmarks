@@ -7,6 +7,8 @@ class BookmarkManager < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions, :method_override
+
   get '/' do
     'View your bookmarks'
     erb(:index)
@@ -14,6 +16,11 @@ class BookmarkManager < Sinatra::Base
 
   get '/add_bookmark' do
     erb(:new_bookmark)
+  end
+
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params[:id])
+    redirect '/bookmarks'
   end
 
   post '/bookmarks' do
